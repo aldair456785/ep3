@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcular Soma (ii)</title>
+    <link rel="stylesheet" href="estilos.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        label {
+            font-weight: bold;
+        }
+        input[type="number"] {
+            width: 50px;
+        }
+        button {
+            margin-top: 10px;
+            padding: 8px 16px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        #resultado {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Calcular Soma (ii)</h2>
+    <label for="numeroN">Digite o valor de N:</label>
+    <input type="number" id="numeroN" min="1" value="1">
+    <button onclick="calcularSomaDupla()">Calcular</button>
+    <div id="resultado"></div>
+
+    <script>
+        function calcularSomaDupla() {
+            let numeroN = document.getElementById("numeroN").value;
+            numeroN = parseInt(numeroN); // Garante que númeroN seja um número inteiro
+
+            let soma = 0;
+
+            for (let i = 1; i <= numeroN; i++) {
+                let termo = parseInt(`${i}${i}`); // Concatena i com i para formar o número ii
+                soma += termo;
+            }
+
+            let resultadoElemento = document.getElementById("resultado");
+            resultadoElemento.textContent = `A soma de (11) + (22) + (33) + ... + (${numeroN}${numeroN}) é: ${soma}`;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calculadora de Números Pares y Media Aritmética</title>
+<link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+<script>
+let contador = 0; // Variable para contar los números pares encontrados
+let suma = 0;     // Variable para acumular la suma de los números pares
+
+let numero = 2;   // Comenzamos con el primer número par
+
+while (contador < 4) {
+    suma += numero;  // Acumulamos el número par actual a la suma
+    contador++;      // Incrementamos el contador de números pares encontrados
+    numero += 2;     // Pasamos al siguiente número par (incremento de 2 en 2)
+}
+
+// Calculamos la media aritmética
+let media = suma / 4;
+
+// Mostramos los resultados
+document.write("<p>Los 4 primeros números pares son: ");
+document.write((numero - 2) + ", ");
+document.write((numero - 4) + ", ");
+document.write((numero - 6) + ", ");
+document.write((numero - 8) + "</p>");
+document.write("<p>La media aritmética de los 4 primeros números pares es: " + media + "</p>");
+</script>
+
+</body>
+</html>

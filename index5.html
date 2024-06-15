@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuadro de Círculos 10x10</title>
+    <link rel="stylesheet" href="estilos.css">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        canvas {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="myCanvas" width="400" height="400"></canvas>
+
+    <script>
+        // Obtener el canvas y su contexto
+        let canvas = document.getElementById("myCanvas");
+        let ctx = canvas.getContext("2d");
+
+        // Tamaño del cuadro de círculos y tamaño de cada círculo
+        let cuadroSize = 10;
+        let circleSize = 30; // Diámetro del círculo (para que haya espacio entre ellos)
+
+        // Función para dibujar el cuadro de círculos
+        function dibujarCuadroCirculos() {
+            // Iterar sobre las filas y columnas
+            for (let fila = 0; fila < cuadroSize; fila++) {
+                for (let columna = 0; columna < cuadroSize; columna++) {
+                    // Calcular las coordenadas del círculo
+                    let x = columna * circleSize + circleSize / 2;
+                    let y = fila * circleSize + circleSize / 2;
+
+                    // Dibujar el círculo
+                    ctx.beginPath();
+                    ctx.arc(x, y, circleSize / 2 - 2, 0, Math.PI * 2);
+                    ctx.fillStyle = "blue"; // Color del círculo
+                    ctx.fill();
+                    ctx.closePath();
+                }
+            }
+        }
+
+        // Llamar a la función para dibujar el cuadro de círculos
+        dibujarCuadroCirculos();
+    </script>
+</body>
+</html>

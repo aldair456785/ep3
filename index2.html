@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Números Múltiplos de 7</title>
+<link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+<script>
+// Iteramos desde 100 hasta 300
+for (let i = 100; i <= 300; i++) {
+    // Verificamos si es múltiplo de 7 y no está entre 120 y 180
+    if (i % 7 === 0 && (i < 120 || i > 180)) {
+        document.write(`${i} es múltiplo de 7<br>`);
+    }
+}
+</script>
+
+</body>
+</html>
